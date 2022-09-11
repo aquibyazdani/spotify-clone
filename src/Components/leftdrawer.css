@@ -1,0 +1,26 @@
+.leftdrawer-menu-text{
+    font-size: 14px !important;
+    font-weight: 600;
+}
+.leftdrawer-menu-text:hover{
+    font-size: 14px !important;
+    color:white !important;
+    font-weight: 600;
+}
+.leftdrawer-menu-icon{
+    color:#A7A7A7;
+    font-size: 28px !important;
+}
+.leftdrawer-menu-icon:hover{
+    color:white;
+}
+.info-leftdrawer-text{
+    font-size: 11px;
+}
+.info-leftdrawer-text:hover{
+    text-decoration: underline;
+}
+.info-leftdrawer-wrapper{
+   position: absolute !important;
+   bottom: 70px !important;
+}
