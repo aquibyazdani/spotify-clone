@@ -49,7 +49,7 @@ const leftDrawerThirdMenu = [
   },
 ];
 
-export default function LeftDrawer() {
+export default function LeftDrawer(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <Drawer
@@ -75,7 +75,11 @@ export default function LeftDrawer() {
 
         <List className="mt-3">
           {leftDrawerFirstMenu?.map((item, index) => (
-            <ListItem key={index + item.label} disablePadding>
+            <ListItem
+              onClick={() => props?.setLeftDrawerMenu(item?.label)}
+              key={index + item.label}
+              disablePadding
+            >
               <ListItemButton>
                 <ListItemIcon
                   sx={{ minWidth: "fit-content", paddingRight: "0.7rem" }}

@@ -1,0 +1,42 @@
+.search-info-container{
+    margin-bottom: 12px;
+    margin-top: 75px;
+   }
+
+
+   .search-name{
+   color:white;
+   font-size: 24px;
+   cursor: pointer;
+   width: fit-content;
+   }
+   .search-card-container{
+    width:180.75px;
+    height: 180.75px;
+    background-color: #26856a;
+    border-radius:7px!important;
+    cursor: pointer;
+    }
+    .search-card-name{
+        font-size: 20px !important;
+        color:white;
+        padding:18px 0px 0px 26px;
+        font-weight: 500;
+    
+       }
+    
+       .search-img-container{
+        padding-left: 5rem;
+        padding-top: 1rem;
+        overflow: hidden !important;
+        max-height: 113px;
+       }
+ 
+       .search-img{
+        width: 110.75px;
+        margin-bottom: 16px;
+        transform: rotate(20deg);
+        padding-left: 1rem;
+    }
+
+  
