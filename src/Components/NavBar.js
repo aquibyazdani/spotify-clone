@@ -7,13 +7,19 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import logo from "../assests/Spotify_Logo_RGB_White.png";
 import Divider from "@mui/material/Divider";
+import { Row, Col } from "reactstrap";
 import "./navbar.css";
-export default function NavBar() {
+import SearchSharpIcon from "@mui/icons-material/SearchSharp";
+
+export default function NavBar(props) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="fixed"
-        sx={{ backgroundColor: "#0a0a0a", boxShadow: "none" }}
+        sx={{
+          backgroundColor: "#0a0a0a",
+          boxShadow: "none",
+        }}
       >
         <Toolbar>
           <IconButton
@@ -25,6 +31,18 @@ export default function NavBar() {
           >
             <img width="131px" src={logo} alt="logo" />
           </IconButton>
+          {props?.leftDrawerMenu === "Search" && (
+            <Row className="searchbar-wrapper">
+              <input
+                className="search-bar-input"
+                type="search"
+                placeholder="What do you want to listen to?"
+              />
+              <span className="searchicon-searchbar">
+                <SearchSharpIcon />
+              </span>
+            </Row>
+          )}
           <Typography
             variant="h6"
             component="div"

@@ -37,3 +37,24 @@
     font-weight: 600 !important;
     text-transform: capitalize !important;
 }
+.search-bar-input{
+    width: 364px;
+    height:40px;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.875rem;
+    padding-left: 3rem;
+}
+.search-bar-input:focus, .search-bar-input:active{
+  border:none !important
+}
+.searchbar-wrapper{
+    margin-left: 6rem;
+}
+.searchicon-searchbar{
+    position: absolute;
+    top: 20px;
+    color:black;
+    width:20px;
+    cursor: pointer;
+}

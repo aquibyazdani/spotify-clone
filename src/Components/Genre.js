@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Grid from "@mui/material/Grid";
 import { Row, Col, Card } from "reactstrap";
 import "./genre.css";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+//context
+import { AppContext } from "../contexts/AppContext";
 function Genre(props) {
-  const [isHovering, setIsHovering] = useState(false);
-  const [targetElement, setTargetElement] = useState("");
-
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
+  //context
+  const { isOpenPlayer, setIsOpenPlayer, setIsPlaying } =
+    useContext(AppContext);
+  const [activeCard, setActiveCard] = useState("");
 
   return (
     <>
@@ -42,10 +38,11 @@ function Genre(props) {
                 className="song-detail-container"
                 id={item.label}
                 onMouseOver={(e) => {
-                  setTargetElement(e.target.outerText);
-                  handleMouseOver();
+                  setActiveCard(item.label);
                 }}
-                onMouseLeave={handleMouseOut}
+                onMouseLeave={() => {
+                  setActiveCard("");
+                }}
               >
                 <Card className="song-card-container">
                   <Row>
@@ -58,14 +55,16 @@ function Genre(props) {
                         />
                         <span
                           className={
-                            isHovering && item?.label === targetElement
+                            item?.label === activeCard
                               ? "play-icon-container"
                               : ""
                           }
                         >
-                          {isHovering && item?.label === targetElement && (
+                          {activeCard === item.label && (
                             <Col className={"play-icon-box-container"}>
-                              <PlayArrowIcon />
+                              <PlayArrowIcon
+                                onClick={() => setIsOpenPlayer(true)}
+                              />
                             </Col>
                           )}
                         </span>

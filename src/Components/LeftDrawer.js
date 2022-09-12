@@ -12,44 +12,61 @@ import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import logo from "../assests/Spotify_Logo_RGB_White.png";
-
-const drawerWidth = 242;
-
-const leftDrawerFirstMenu = [
-  {
-    label: "Home",
-    icon: <HomeIcon className="leftdrawer-menu-icon" />,
-  },
-  {
-    label: "Search",
-    icon: <SearchSharpIcon className="leftdrawer-menu-icon" />,
-  },
-  {
-    label: "Your Library",
-    icon: <StackedBarChartIcon className="leftdrawer-menu-icon" />,
-  },
-];
-
-const leftDrawerSecondMenu = [
-  {
-    label: "Create Playlist",
-    icon: <AddBoxIcon className="leftdrawer-menu-icon" />,
-  },
-  {
-    label: "Liked Songs",
-    icon: <FavoriteIcon className="leftdrawer-menu-icon" />,
-  },
-];
-const leftDrawerThirdMenu = [
-  {
-    label: "Cookies",
-  },
-  {
-    label: "Privacy",
-  },
-];
-
+import { Link } from "react-router-dom";
 export default function LeftDrawer(props) {
+  const drawerWidth = 242;
+
+  const leftDrawerFirstMenu = [
+    {
+      label: "Home",
+      path: "/",
+      icon: (
+        <HomeIcon
+          className="leftdrawer-menu-icon"
+          sx={{ color: props?.leftDrawerMenu === "Home" ? "white" : "#A7A7A7" }}
+        />
+      ),
+    },
+    {
+      label: "Search",
+      path: "/search",
+
+      icon: (
+        <SearchSharpIcon
+          className="leftdrawer-menu-icon"
+          sx={{
+            color: props?.leftDrawerMenu === "Search" ? "white" : "#A7A7A7",
+          }}
+        />
+      ),
+    },
+    {
+      label: "Your Library",
+      path: "/your-library",
+
+      icon: <StackedBarChartIcon className="leftdrawer-menu-icon" />,
+    },
+  ];
+
+  const leftDrawerSecondMenu = [
+    {
+      label: "Create Playlist",
+      icon: <AddBoxIcon className="leftdrawer-menu-icon" />,
+    },
+    {
+      label: "Liked Songs",
+      icon: <FavoriteIcon className="leftdrawer-menu-icon" />,
+    },
+  ];
+  const leftDrawerThirdMenu = [
+    {
+      label: "Cookies",
+    },
+    {
+      label: "Privacy",
+    },
+  ];
+
   return (
     <Box sx={{ display: "flex" }}>
       <Drawer
@@ -75,20 +92,28 @@ export default function LeftDrawer(props) {
 
         <List className="mt-3">
           {leftDrawerFirstMenu?.map((item, index) => (
-            <ListItem
-              onClick={() => props?.setLeftDrawerMenu(item?.label)}
-              key={index + item.label}
-              disablePadding
-            >
-              <ListItemButton>
-                <ListItemIcon
-                  sx={{ minWidth: "fit-content", paddingRight: "0.7rem" }}
-                >
-                  {item?.icon}
-                </ListItemIcon>
-                <span className="leftdrawer-menu-text">{item?.label}</span>
-              </ListItemButton>
-            </ListItem>
+            <Link to={item.path}>
+              <ListItem key={index + item.label} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon
+                    sx={{ minWidth: "fit-content", paddingRight: "0.7rem" }}
+                  >
+                    {item?.icon}
+                  </ListItemIcon>
+                  <span
+                    className="leftdrawer-menu-text"
+                    style={{
+                      color:
+                        props?.leftDrawerMenu === item?.label
+                          ? "white"
+                          : "#A7A7A7",
+                    }}
+                  >
+                    {item?.label}
+                  </span>
+                </ListItemButton>
+              </ListItem>
+            </Link>
           ))}
         </List>
 

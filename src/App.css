@@ -41,3 +41,6 @@ body{
   font-family: 'Poppins', sans-serif !important;
 
 }
+.justfy-content-center{
+  justify-content: center;
+}

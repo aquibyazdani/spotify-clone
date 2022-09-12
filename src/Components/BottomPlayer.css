@@ -1,0 +1,75 @@
+.bttm-player-img-container{
+    width:57px
+}
+.bttm-player-img{
+    width: 56px;
+    height:56px;
+    padding: 0px;
+}
+.bottm-plyr-song-info-container{
+    max-width: fit-content;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.bttm-player-title{
+    font-size: 14px;
+    color:#bfbfbf;
+    margin-bottom: 3px;
+}
+.bttm-player-author{
+    font-size: 11px;
+    color:#8b8b8b;
+    margin-bottom: 3px;
+}
+.bttm-player-icon-container{
+    width:fit-content;
+    color:#c2c2c2
+}
+.bttm-player-play-container{
+width: 30px;
+height: 30px;
+border-radius: 100%;
+background-color: white;
+color:black;
+position: absolute;
+left: 10p;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+.bttm-plyr-icon-container{
+    max-width: fit-content;
+}
+.bttm-plyr-playicon-container{
+    max-width: fit-content;
+    margin-right: 24px;
+}
+
+.btm-plyr-main-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: inherit;
+}
+.player-progress-container{
+    width: 100%;
+    max-width: 700px;
+    margin-top: 0.5rem;
+}
+.sound-bar{
+    height: 4px;
+    width:50px;
+    background-color: white !important;
+   position: absolute;
+    z-index: 9999;
+    margin-top: 1px;
+    margin-left: -12px;
+    border-radius: 5px;
+}
+.sound-bar-container {
+    width:100px;
+    background-color:grey;
+    max-height: 6px;
+    margin-top: 19px;
+    border-radius: 5px;
+}
