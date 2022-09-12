@@ -18,19 +18,6 @@ function App() {
           setLeftDrawerMenu={setLeftDrawerMenu}
         />
         <BottomPlayer />
-        {/* {leftDrawerMenu === "Home" ? (
-          <SpotifyHome
-            leftDrawerMenu={leftDrawerMenu}
-            setLeftDrawerMenu={setLeftDrawerMenu}
-          />
-        ) : leftDrawerMenu === "Search" ? (
-          <SearchHomepage
-            leftDrawerMenu={leftDrawerMenu}
-            setLeftDrawerMenu={setLeftDrawerMenu}
-          />
-        ) : (
-          ""
-        )} */}
 
         <Routes>
           <Route exact path="/search" element={<SearchHomepage />}></Route>

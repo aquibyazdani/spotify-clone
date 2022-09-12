@@ -34,7 +34,6 @@ const StyledFab = styled(Fab)({
 export default function BottomPlayer() {
   const { progressSong, isPlaying, setIsPlaying, isOpenPlayer } =
     useContext(AppContext);
-  console.log("isPlaying: ", isPlaying);
   return (
     <React.Fragment>
       <AppBar

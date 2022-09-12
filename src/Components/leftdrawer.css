@@ -1,6 +1,7 @@
 .leftdrawer-menu-text{
     font-size: 14px !important;
     font-weight: 600;
+    text-decoration: none;
 }
 .leftdrawer-menu-text:hover{
     font-size: 14px !important;

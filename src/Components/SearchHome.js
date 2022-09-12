@@ -11,6 +11,7 @@ function SearchHome(props) {
             return (
               <>
                 <Col
+                  key={i + "kk"}
                   md="1"
                   xl="1"
                   style={{

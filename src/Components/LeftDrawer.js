@@ -12,8 +12,10 @@ import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import logo from "../assests/Spotify_Logo_RGB_White.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function LeftDrawer(props) {
+  const navigate = useNavigate();
+
   const drawerWidth = 242;
 
   const leftDrawerFirstMenu = [
@@ -44,7 +46,15 @@ export default function LeftDrawer(props) {
       label: "Your Library",
       path: "/your-library",
 
-      icon: <StackedBarChartIcon className="leftdrawer-menu-icon" />,
+      icon: (
+        <StackedBarChartIcon
+          className="leftdrawer-menu-icon"
+          sx={{
+            color:
+              props?.leftDrawerMenu === "Your Library" ? "white" : "#A7A7A7",
+          }}
+        />
+      ),
     },
   ];
 
@@ -67,6 +77,9 @@ export default function LeftDrawer(props) {
     },
   ];
 
+  const navigateLeftMenu = (path) => {
+    navigate(path);
+  };
   return (
     <Box sx={{ display: "flex" }}>
       <Drawer
@@ -92,28 +105,33 @@ export default function LeftDrawer(props) {
 
         <List className="mt-3">
           {leftDrawerFirstMenu?.map((item, index) => (
-            <Link to={item.path}>
-              <ListItem key={index + item.label} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon
-                    sx={{ minWidth: "fit-content", paddingRight: "0.7rem" }}
-                  >
-                    {item?.icon}
-                  </ListItemIcon>
-                  <span
-                    className="leftdrawer-menu-text"
-                    style={{
-                      color:
-                        props?.leftDrawerMenu === item?.label
-                          ? "white"
-                          : "#A7A7A7",
-                    }}
-                  >
-                    {item?.label}
-                  </span>
-                </ListItemButton>
-              </ListItem>
-            </Link>
+            <ListItem
+              onClick={() => {
+                navigateLeftMenu(item.path);
+                props?.setLeftDrawerMenu(item?.label);
+              }}
+              key={index + item.label}
+              disablePadding
+            >
+              <ListItemButton sx={{ textDecoration: "none" }}>
+                <ListItemIcon
+                  sx={{ minWidth: "fit-content", paddingRight: "0.7rem" }}
+                >
+                  {item?.icon}
+                </ListItemIcon>
+                <span
+                  className="leftdrawer-menu-text"
+                  style={{
+                    color:
+                      props?.leftDrawerMenu === item?.label
+                        ? "white"
+                        : "#A7A7A7",
+                  }}
+                >
+                  {item?.label}
+                </span>
+              </ListItemButton>
+            </ListItem>
           ))}
         </List>
 
