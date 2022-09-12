@@ -6,22 +6,31 @@ import NavBar from "./Components/NavBar";
 import LeftDrawer from "./Components/LeftDrawer";
 import SearchHomepage from "./Components/SearchHomepage";
 import BottomPlayer from "./Components/BottomPlayer";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import SignUp from "./Components/Signup";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 function App() {
   const [leftDrawerMenu, setLeftDrawerMenu] = useState("Home");
+
+  console.log("rote path", window.location.pathname);
   return (
     <>
       <Router>
-        <NavBar leftDrawerMenu={leftDrawerMenu} />
-        <LeftDrawer
-          leftDrawerMenu={leftDrawerMenu}
-          setLeftDrawerMenu={setLeftDrawerMenu}
-        />
-        <BottomPlayer />
+        {window.location.pathname !== "/sign-up" && (
+          <NavBar leftDrawerMenu={leftDrawerMenu} />
+        )}
+        {window.location.pathname !== "/sign-up" && (
+          <LeftDrawer
+            leftDrawerMenu={leftDrawerMenu}
+            setLeftDrawerMenu={setLeftDrawerMenu}
+          />
+        )}
+        {window.location.pathname !== "/sign-up" && <BottomPlayer />}
 
         <Routes>
           <Route exact path="/search" element={<SearchHomepage />}></Route>
           <Route exact path="/" element={<SpotifyHome />}></Route>
+          <Route exact path="/sign-up" element={<SignUp />}></Route>
         </Routes>
       </Router>
     </>

@@ -1,0 +1,72 @@
+.signup-logo{
+    width:130px
+}
+.signup-heading{
+    font-size: 32px;
+    text-align: center;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-weight: 600;
+    padding-bottom: 40px;
+}
+.btn-signup-fb{
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: none;
+    letter-spacing: normal;
+    box-sizing: border-box;
+    border-radius: 500px;
+    align-self: center;
+    padding: 6px 24px;
+    height:45.5px;
+    width:394px;
+    background-color: #405992;
+    margin-bottom: 22px;
+}
+.btn-signup-fb:hover{
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: none;
+    letter-spacing: normal;
+    box-sizing: border-box;
+    border-radius: 500px;
+    align-self: center;
+    padding: 8px 26px;
+    /* height:47.5px; */
+    /* width:447px; */
+    background-color: #405992;
+}
+.btn-signup-google{
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: none;
+    letter-spacing: normal;
+    box-sizing: border-box;
+    border-radius: 500px;
+    align-self: center;
+    padding: 6px 24px;
+    height:42.5px;
+    width:390px;
+    background-color: white;
+    margin-bottom: 22px;
+    border: 2px solid black;
+    color:#646464;
+    font-weight: 500;
+}
+.btn-signup-google:hover{
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: none;
+    letter-spacing: normal;
+    box-sizing: border-box;
+    border-radius: 500px;
+    align-self: center;
+    padding: 8px 26px;
+    height:42.5px;
+    color:#646464;
+    width:390px;
+    background-color: white;
+    font-weight: 500;
+}

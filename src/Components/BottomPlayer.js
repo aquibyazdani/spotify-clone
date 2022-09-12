@@ -1,10 +1,6 @@
 import React, { useContext } from "react";
-import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Fab from "@mui/material/Fab";
 import { Row, Col } from "reactstrap";
 import WidthWideOutlinedIcon from "@mui/icons-material/WidthWideOutlined";
 import "./BottomPlayer.css";
@@ -22,18 +18,9 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 
 //context
 import { AppContext } from "../contexts/AppContext";
-const StyledFab = styled(Fab)({
-  position: "absolute",
-  zIndex: 1,
-  top: -30,
-  left: 0,
-  right: 0,
-  margin: "0 auto",
-});
 
 export default function BottomPlayer() {
-  const { progressSong, isPlaying, setIsPlaying, isOpenPlayer } =
-    useContext(AppContext);
+  const { isPlaying, setIsPlaying, isOpenPlayer } = useContext(AppContext);
   return (
     <React.Fragment>
       <AppBar

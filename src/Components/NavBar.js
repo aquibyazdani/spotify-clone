@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,7 +10,7 @@ import Divider from "@mui/material/Divider";
 import { Row, Col } from "reactstrap";
 import "./navbar.css";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
-
+import { Link } from "react-router-dom";
 export default function NavBar(props) {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -63,9 +63,16 @@ export default function NavBar(props) {
             variant="middle"
             sx={{ minHeight: 30, width: 2 }}
           />
-          <Button className="nav-menu-text" color="inherit">
-            Sign up
-          </Button>
+          <Link
+            style={{ textDecoration: "none" }}
+            to="/sign-up"
+            target="_blank"
+          >
+            <Button className="nav-menu-text" color="inherit">
+              Sign up
+            </Button>
+          </Link>
+
           <Button className="login-btn-nav" color="inherit">
             Sign in
           </Button>

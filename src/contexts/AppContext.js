@@ -6,6 +6,14 @@ const AppContextProvider = (props) => {
   const [progressSong, setProgressSong] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  useEffect(() => {
+    if (window.location.pathname === "/sign-up") {
+      document.getElementById("body").style.backgroundColor = "white";
+    } else {
+      document.getElementById("body").style.backgroundColor = "#121212";
+    }
+  }, [window.location.pathname]);
+
   return (
     <AppContext.Provider
       value={{
