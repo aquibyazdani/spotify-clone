@@ -70,3 +70,53 @@
     background-color: white;
     font-weight: 500;
 }
+.signup-text-field{
+    border: 1px solid black;
+    max-width: 24rem;
+    height: 50px;
+}
+.signup-form-label{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+}
+.calen-signup-form{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+.radio-signup{
+   max-width: 75px;
+   font-size: 12px;
+}
+.terms-cond-signup{
+    font-size: 12px;
+    text-align: center;
+}
+ .link-signup{
+    font-size: 12px;
+    text-align: center;
+    text-decoration: underline;
+    color: #1ed760;
+}
+.btn-signup-signup{
+    font-size: inherit;
+    line-height: 20px;
+    text-transform: none;
+    letter-spacing: normal;
+    box-sizing: border-box;
+    border-radius: 500px;
+    align-self: center;
+    padding: 6px 24px;
+    height:56px;
+    width:154px;
+    color: black;
+    background-color: #1ed760;
+    margin-bottom: 22px;
+    border: none;
+    font-weight: bold;
+}
