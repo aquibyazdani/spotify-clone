@@ -52,6 +52,9 @@ function SignUp() {
                 type="text"
                 placeholder="Enter your email."
               />
+              <a href="/signup-with-mobile-number" target="_blank">
+                <span className="link-signup">Use phone number instead.</span>
+              </a>
             </Col>
           </Row>
           <Row className="justify-content-center pt-3">

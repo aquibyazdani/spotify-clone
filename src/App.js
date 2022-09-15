@@ -8,6 +8,7 @@ import SearchHomepage from "./Components/SearchHomepage";
 import BottomPlayer from "./Components/BottomPlayer";
 import SignUp from "./Components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignupMob from "./Components/SignupMob";
 
 function App() {
   const [leftDrawerMenu, setLeftDrawerMenu] = useState("Home");
@@ -16,21 +17,26 @@ function App() {
   return (
     <>
       <Router>
-        {window.location.pathname !== "/sign-up" && (
+        {!window.location.pathname.includes("sign") && (
           <NavBar leftDrawerMenu={leftDrawerMenu} />
         )}
-        {window.location.pathname !== "/sign-up" && (
+        {!window.location.pathname.includes("sign") && (
           <LeftDrawer
             leftDrawerMenu={leftDrawerMenu}
             setLeftDrawerMenu={setLeftDrawerMenu}
           />
         )}
-        {window.location.pathname !== "/sign-up" && <BottomPlayer />}
+        {!window.location.pathname.includes("sign") && <BottomPlayer />}
 
         <Routes>
           <Route exact path="/search" element={<SearchHomepage />}></Route>
           <Route exact path="/" element={<SpotifyHome />}></Route>
           <Route exact path="/sign-up" element={<SignUp />}></Route>
+          <Route
+            exact
+            path="/signup-with-mobile-number"
+            element={<SignupMob />}
+          ></Route>
         </Routes>
       </Router>
     </>

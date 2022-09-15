@@ -7,7 +7,7 @@ const AppContextProvider = (props) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    if (window.location.pathname === "/sign-up") {
+    if (window.location.pathname.includes("sign")) {
       document.getElementById("body").style.backgroundColor = "white";
     } else {
       document.getElementById("body").style.backgroundColor = "#121212";
