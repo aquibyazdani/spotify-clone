@@ -7,12 +7,12 @@ function SearchHomepage() {
     {
       label: "Podcasts",
       color: "#26856a",
-      image: "/567158eb895ad26718a814345af0fc43ee785ec5.jpeg",
+      image: "/8cfa9cb1e43a404db76eed6ad594057c.jpeg",
     },
     {
       label: "Made For You",
       color: "#1e3365",
-      image: "/ea364e99656e46a096ea1df50f581efe.png",
+      image: "/d0fb2ab104dc4846bdc56d72b0b0d785.jpeg",
     },
     { label: "Charts", color: "#8d67aa", image: "/region_global_default.jpeg" },
     {
@@ -74,7 +74,7 @@ function SearchHomepage() {
     {
       label: "RADAR",
       color: "#7358ff",
-      image: "/c6677aa51acf4121b66b9d1f231bd427.jpeg",
+      image: "/d0fb2ab104dc4846bdc56d72b0b0d785.jpeg",
     },
     {
       label: "Fresh Finds",

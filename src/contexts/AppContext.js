@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 export const AppContext = React.createContext();
 const AppContextProvider = (props) => {
   const [isOpenPlayer, setIsOpenPlayer] = useState(false);
+  const [isOpenMusic, setIsOpenMusic] = useState(false);
+
   const [progressSong, setProgressSong] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -23,6 +25,8 @@ const AppContextProvider = (props) => {
         setProgressSong,
         isPlaying,
         setIsPlaying,
+        isOpenMusic,
+        setIsOpenMusic,
       }}
     >
       {props.children}

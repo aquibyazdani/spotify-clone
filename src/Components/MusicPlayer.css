@@ -1,0 +1,43 @@
+.rhap_container{
+background-color: black !important ;
+color: grey !important ;
+}
+.rhap_time {
+    color: #fff !important;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.rhap_progress-filled{
+    background-color: white !important;
+}
+.rhap_progress-indicator{
+    width: 10px !important;
+    height: 10px !important;
+    top: -3px !important
+}
+.rhap_progress-section{
+    justify-content: center !important;
+}
+/* .rhap_progress-container{
+    max-width: 500px !important;
+} */
+.rhap_time{
+    font-size: 10px !important;
+}
+.rhap_progress-bar{
+    height: 3.5px !important;
+}
+.rhap_main-controls-button{
+    color:#bcbcbc !important
+}
+.rhap_play-pause-button{
+    color: white !important;
+}
+.rhap_volume-indicator{
+    width: 10px !important;
+    height:10 px !important;
+}
+.rhap_volume-button,.rhap_repeat-button{
+    color:#d8d2d2 !important
+}

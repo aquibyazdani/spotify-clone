@@ -7,7 +7,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import { AppContext } from "../contexts/AppContext";
 function Genre(props) {
   //context
-  const { isOpenPlayer, setIsOpenPlayer, setIsPlaying } =
+  const { isOpenPlayer, setIsOpenPlayer, setIsPlaying, setIsOpenMusic } =
     useContext(AppContext);
   const [activeCard, setActiveCard] = useState("");
 
@@ -24,8 +24,6 @@ function Genre(props) {
       <Row
         style={{
           maxWidth: window.innerWidth - 260,
-          overflowY: "hidden",
-          overflowX: "scroll",
           flexWrap: "nowrap",
         }}
         className="grenre-container"
@@ -63,7 +61,10 @@ function Genre(props) {
                           {activeCard === item.label && (
                             <Col className={"play-icon-box-container"}>
                               <PlayArrowIcon
-                                onClick={() => setIsOpenPlayer(true)}
+                                onClick={() => {
+                                  // setIsOpenPlayer(true)
+                                  setIsOpenMusic(true);
+                                }}
                               />
                             </Col>
                           )}

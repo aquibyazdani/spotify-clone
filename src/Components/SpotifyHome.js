@@ -16,7 +16,7 @@ function SpotifyHome() {
     {
       label: "Instrumental Study",
       description: "A soft musical backdrop for your studies..",
-      image: "/ab67706f0000000222a1ae968a3fa0c6dd846bcf.jpeg",
+      image: "/ab67706f00000002724554ed6bed6f051d9b0bfc.jpeg",
     },
     {
       label: "chill lofi study beats",

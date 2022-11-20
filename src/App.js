@@ -9,6 +9,7 @@ import BottomPlayer from "./Components/BottomPlayer";
 import SignUp from "./Components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignupMob from "./Components/SignupMob";
+import MusicPlayer from "./Components/MusicPlayer";
 
 function App() {
   const [leftDrawerMenu, setLeftDrawerMenu] = useState("Home");
@@ -27,6 +28,7 @@ function App() {
           />
         )}
         {!window.location.pathname.includes("sign") && <BottomPlayer />}
+        {!window.location.pathname.includes("sign") && <MusicPlayer />}
 
         <Routes>
           <Route exact path="/search" element={<SearchHomepage />}></Route>

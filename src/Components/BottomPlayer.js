@@ -43,7 +43,7 @@ export default function BottomPlayer() {
                 <span className="bttm-player-img-container">
                   <img
                     className="bttm-player-img"
-                    src={"/ea364e99656e46a096ea1df50f581efe.png"}
+                    src={"/ab67706f00000002724554ed6bed6f051d9b0bfc.jpeg"}
                     alt="icon"
                   />
                 </span>

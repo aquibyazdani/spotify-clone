@@ -11,7 +11,37 @@ import { Row, Col } from "reactstrap";
 import "./navbar.css";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 export default function NavBar(props) {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
+  const LoginButton = () => {
+    const { loginWithRedirect } = useAuth0();
+
+    return (
+      <Button
+        className="login-btn-nav"
+        color="inherit"
+        onClick={() => loginWithRedirect()}
+      >
+        Log In
+      </Button>
+    );
+  };
+
+  const LogoutButton = () => {
+    const { logout } = useAuth0();
+
+    return (
+      <Button
+        className="login-btn-nav"
+        color="inherit"
+        onClick={() => logout({ returnTo: window.location.origin })}
+      >
+        Log Out
+      </Button>
+    );
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -72,10 +102,7 @@ export default function NavBar(props) {
               Sign up
             </Button>
           </Link>
-
-          <Button className="login-btn-nav" color="inherit">
-            Sign in
-          </Button>
+          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </Toolbar>
       </AppBar>
     </Box>

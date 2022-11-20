@@ -691,7 +691,7 @@ function SignupMob() {
           <Row className="mt-5">
             <Button
               className="btn-signup-signup"
-              style={{ width: "108px", height: "48px" }}
+              style={{ width: "108px", height: "48px", fontWeight: "NORMAL" }}
             >
               Next
             </Button>
