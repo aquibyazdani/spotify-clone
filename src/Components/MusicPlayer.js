@@ -7,7 +7,7 @@ import "./MusicPlayer.css";
 import { AppContext } from "../contexts/AppContext";
 function MusicPlayer() {
   //context
-  const { isOpenPlayer, setIsOpenPlayer, setIsPlaying, isOpenMusic } =
+  const { isPlayingMusic, setIsOpenPlayer, setIsPlayingMusic, isOpenMusic } =
     useContext(AppContext);
   const [currentSong, setCurrentSong] = useState(0);
   const handleNextSong = () => {
@@ -22,7 +22,8 @@ function MusicPlayer() {
     );
   };
   const handleEnd = () => {
-    console.log("end");
+    setIsPlayingMusic(false);
+
     setCurrentSong((currentTrack) =>
       currentTrack < playlist.length - 1 ? currentTrack + 1 : 0
     );
@@ -39,7 +40,7 @@ function MusicPlayer() {
         color="primary"
         sx={{
           top: "auto",
-          bottom: isOpenMusic ? "10px" : "-150px",
+          bottom: isOpenMusic || isPlayingMusic ? "10px" : "-150px",
           transition: "350ms",
           backgroundColor: "#181818",
           height: "90px",
@@ -54,7 +55,13 @@ function MusicPlayer() {
           onClickNext={handleNextSong}
           onClickPrevious={handlePrevSong}
           src={playlist[currentSong].src}
-          onPlay={(e) => console.log("playing")}
+          onPlay={(e) => {
+            setIsPlayingMusic(true);
+            console.log(e);
+          }}
+          onPause={() => {
+            setIsPlayingMusic(false);
+          }}
           onEnded={handleEnd}
         />
       </AppBar>

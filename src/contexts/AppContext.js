@@ -4,6 +4,7 @@ export const AppContext = React.createContext();
 const AppContextProvider = (props) => {
   const [isOpenPlayer, setIsOpenPlayer] = useState(false);
   const [isOpenMusic, setIsOpenMusic] = useState(false);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
   const [progressSong, setProgressSong] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -27,6 +28,8 @@ const AppContextProvider = (props) => {
         setIsPlaying,
         isOpenMusic,
         setIsOpenMusic,
+        isPlayingMusic,
+        setIsPlayingMusic,
       }}
     >
       {props.children}
